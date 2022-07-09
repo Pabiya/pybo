@@ -127,7 +127,7 @@ STATICFILES_DIRS =[
 LOGIN_REDIRECT_URL='/'
 LOGOUT_REDIRECT_URL='/'
 
-#로깅 설정
+# 로깅 설정
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -135,7 +135,7 @@ LOGGING = {
         'require_debug_false': {
             '()': 'django.utils.log.RequireDebugFalse',
         },
-        'require_debug_true':{
+        'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue',
         },
     },
@@ -168,9 +168,9 @@ LOGGING = {
         'file': {
             'level': 'INFO',
             'filters': ['require_debug_false'],
-            'class': 'logging.handlers.RotatingFileMandler',
+            'class': 'logging.handlers.RotatingFileHandler',
             'filename': BASE_DIR / 'logs/mysite.log',
-            'maxBytes': 1024*1024*5, #5MB
+            'maxBytes': 1024*1024*5,    # 5MB
             'backupCount': 5,
             'formatter': 'standard',
         },
@@ -178,7 +178,7 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['console', 'mail_admins', 'file'],
-            'level': 'INFO'
+            'level': 'INFO',
         },
         'django.server': {
             'handlers': ['django.server'],
